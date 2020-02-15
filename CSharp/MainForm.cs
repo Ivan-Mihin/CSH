@@ -139,7 +139,10 @@ namespace CSharp
 
         private void backgroundColorToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            if (colorDialog.ShowDialog() == DialogResult.OK)
+            {
+                background.BackColor = colorDialog.Color;
+            }
         }
 
         private void OpenToolStripMenuItem_Click(object sender, EventArgs e)
@@ -149,6 +152,7 @@ namespace CSharp
                 bitmapSlika.Image = new Bitmap(open.FileName);
 
                 background.Controls.Add(bitmapSlika);
+                bitmapSlika.Visible = true;
             }
         }
 
