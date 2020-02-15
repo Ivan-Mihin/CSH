@@ -144,12 +144,17 @@ namespace CSharp
 
         private void OpenToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (open.ShowDialog() == DialogResult.OK)
+            {
+                bitmapSlika.Image = new Bitmap(open.FileName);
 
+                background.Controls.Add(bitmapSlika);
+            }
         }
 
         private void ExitToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
     }
 }
