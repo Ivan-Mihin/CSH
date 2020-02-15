@@ -124,7 +124,10 @@ namespace CSharp
 
         private void ImageResizeToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            ImageResizeForm resizeForm = new ImageResizeForm(bitmapSlika.Image, bitmapSlika.Width, bitmapSlika.Height);
+            resizeForm.ShowDialog();
 
+            bitmapSlika.Image = resizeForm.NewBitmap;
         }
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)

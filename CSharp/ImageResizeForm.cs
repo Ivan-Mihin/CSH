@@ -19,6 +19,16 @@ namespace CSharp
             InitializeComponent();
         }
 
+        public ImageResizeForm(Image image, int width, int height)
+        {
+            InitializeComponent();
+
+            NewBitmap = image;
+
+            widthTextBox.Text = Convert.ToString(width);
+            heightTextBox.Text = Convert.ToString(height);
+        }
+
         private static Image ResizeImage(Image bitmap, int width, int height)
         {
             Image resizedBitmap = new Bitmap(width, height);
