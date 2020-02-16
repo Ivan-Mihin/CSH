@@ -122,7 +122,7 @@ namespace CSharp
             }
         }
 
-        private void ImageResizeToolStripMenuItem_Click(object sender, EventArgs e)
+        private void imageResizeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ImageResizeForm resizeForm = new ImageResizeForm(bitmapSlika.Image, bitmapSlika.Width, bitmapSlika.Height);
             resizeForm.ShowDialog();
@@ -130,14 +130,12 @@ namespace CSharp
             bitmapSlika.Image = resizeForm.NewBitmap;
         }
 
-        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        private void imageMovementToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            ImageMovementForm movementForm = new ImageMovementForm(Movement);
+            movementForm.ShowDialog();
 
-        }
-
-        private void ImageMovementToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
+            Movement = movementForm.NewMovement;
         }
 
         private void backgroundColorToolStripMenuItem_Click(object sender, EventArgs e)
@@ -148,7 +146,7 @@ namespace CSharp
             }
         }
 
-        private void OpenToolStripMenuItem_Click(object sender, EventArgs e)
+        private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (open.ShowDialog() == DialogResult.OK)
             {
@@ -159,7 +157,7 @@ namespace CSharp
             }
         }
 
-        private void ExitToolStripMenuItem_Click(object sender, EventArgs e)
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
         }
