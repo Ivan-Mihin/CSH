@@ -41,6 +41,36 @@ namespace CSharp
             return resizedBitmap;
         }
 
+        private bool IsDigitsOnly(string input)
+        {
+            if (string.Compare(input, "0") == 0 || string.Compare(input, "") == 0)
+            {
+                return false;
+            }
+
+            foreach (char c in input)
+            {
+                if (c < '0' || c > '9')
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+        private void TextBoxInputCheck_irf_Tick(object sender, EventArgs e)
+        {
+            if (IsDigitsOnly(widthTextBox.Text) && IsDigitsOnly(heightTextBox.Text))
+            {
+                OK_Button_ImageResizeForm.Enabled = true;
+            }
+            else
+            {
+                OK_Button_ImageResizeForm.Enabled = false;
+            }
+        }
+
         private void OK_Button_ImageResizeForm_Click(object sender, EventArgs e)
         {
             NewBitmap = ResizeImage(NewBitmap, Convert.ToInt32(widthTextBox.Text), Convert.ToInt32(heightTextBox.Text));

@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.widthTextBox = new System.Windows.Forms.TextBox();
             this.heightTextBox = new System.Windows.Forms.TextBox();
             this.widthLabel = new System.Windows.Forms.Label();
             this.heightLabel = new System.Windows.Forms.Label();
             this.OK_Button_ImageResizeForm = new System.Windows.Forms.Button();
             this.Cancel_Button_ImageResizeForm = new System.Windows.Forms.Button();
+            this.TextBoxInputCheck_irf = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // widthTextBox
@@ -92,6 +94,12 @@
             this.Cancel_Button_ImageResizeForm.UseVisualStyleBackColor = true;
             this.Cancel_Button_ImageResizeForm.Click += new System.EventHandler(this.Cancel_Button_ImageResizeForm_Click);
             // 
+            // TextBoxInputCheck_irf
+            // 
+            this.TextBoxInputCheck_irf.Enabled = true;
+            this.TextBoxInputCheck_irf.Interval = 10;
+            this.TextBoxInputCheck_irf.Tick += new System.EventHandler(this.TextBoxInputCheck_irf_Tick);
+            // 
             // ImageResizeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -117,5 +125,6 @@
         private System.Windows.Forms.Button Cancel_Button_ImageResizeForm;
         private System.Windows.Forms.TextBox widthTextBox;
         private System.Windows.Forms.TextBox heightTextBox;
+        private System.Windows.Forms.Timer TextBoxInputCheck_irf;
     }
 }

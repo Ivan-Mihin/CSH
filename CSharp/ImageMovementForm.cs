@@ -26,6 +26,36 @@ namespace CSharp
             movementTextBox.Text = Convert.ToString(movement);
         }
 
+        private static bool IsDigitsOnly(string input)
+        {
+            if (string.Compare(input, "0") == 0 || string.Compare(input, "") == 0)
+            {
+                return false;
+            }
+
+            foreach (char c in input)
+            {
+                if (c < '0' || c > '9')
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+        private void TextBoxInputCheck_imf_Tick(object sender, EventArgs e)
+        {
+            if (IsDigitsOnly(movementTextBox.Text))
+            {
+                OK_Button_ImageMovementForm.Enabled = true;
+            }
+            else
+            {
+                OK_Button_ImageMovementForm.Enabled = false;
+            }
+        }
+
         private void OK_Button_ImageMovementForm_Click(object sender, EventArgs e)
         {
             NewMovement = Convert.ToInt32(movementTextBox.Text);

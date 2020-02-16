@@ -33,7 +33,7 @@
             this.movementTextBox = new System.Windows.Forms.TextBox();
             this.OK_Button_ImageMovementForm = new System.Windows.Forms.Button();
             this.Cancel_Button_ImageMovementForm = new System.Windows.Forms.Button();
-            this.TextBoxInputChecker = new System.Windows.Forms.Timer(this.components);
+            this.TextBoxInputCheck_imf = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // movementLabel
@@ -74,10 +74,11 @@
             this.Cancel_Button_ImageMovementForm.UseVisualStyleBackColor = true;
             this.Cancel_Button_ImageMovementForm.Click += new System.EventHandler(this.Cancel_Button_ImageMovementForm_Click);
             // 
-            // TextBoxInputChecker
+            // TextBoxInputCheck_imf
             // 
-            this.TextBoxInputChecker.Enabled = true;
-            this.TextBoxInputChecker.Interval = 10;
+            this.TextBoxInputCheck_imf.Enabled = true;
+            this.TextBoxInputCheck_imf.Interval = 10;
+            this.TextBoxInputCheck_imf.Tick += new System.EventHandler(this.TextBoxInputCheck_imf_Tick);
             // 
             // ImageMovementForm
             // 
@@ -101,6 +102,6 @@
         private System.Windows.Forms.Button OK_Button_ImageMovementForm;
         private System.Windows.Forms.Button Cancel_Button_ImageMovementForm;
         private System.Windows.Forms.TextBox movementTextBox;
-        private System.Windows.Forms.Timer TextBoxInputChecker;
+        private System.Windows.Forms.Timer TextBoxInputCheck_imf;
     }
 }
