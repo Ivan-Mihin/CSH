@@ -58,8 +58,16 @@ namespace CSharp
 
         private void OK_Button_ImageMovementForm_Click(object sender, EventArgs e)
         {
-            NewMovement = Convert.ToInt32(movementTextBox.Text);
-            this.Close();
+            try
+            {
+                NewMovement = Convert.ToInt32(movementTextBox.Text);
+
+                this.Close();
+            }
+            catch (Exception excep)
+            {
+                MessageBox.Show(excep.Message + '\n' + "Please enter a natural number.");
+            }
         }
 
         private void Cancel_Button_ImageMovementForm_Click(object sender, EventArgs e)

@@ -97,7 +97,7 @@
             // TextBoxInputCheck_irf
             // 
             this.TextBoxInputCheck_irf.Enabled = true;
-            this.TextBoxInputCheck_irf.Interval = 10;
+            this.TextBoxInputCheck_irf.Interval = 50;
             this.TextBoxInputCheck_irf.Tick += new System.EventHandler(this.TextBoxInputCheck_irf_Tick);
             // 
             // ImageResizeForm

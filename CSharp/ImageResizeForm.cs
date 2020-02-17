@@ -73,8 +73,18 @@ namespace CSharp
 
         private void OK_Button_ImageResizeForm_Click(object sender, EventArgs e)
         {
-            NewBitmap = ResizeImage(NewBitmap, Convert.ToInt32(widthTextBox.Text), Convert.ToInt32(heightTextBox.Text));
-            this.Close();
+            try
+            {
+                int width = Convert.ToInt32(widthTextBox.Text);
+                int height = Convert.ToInt32(heightTextBox.Text);
+
+                NewBitmap = ResizeImage(NewBitmap, width, height);
+                this.Close();
+            }
+            catch (Exception excep)
+            {
+                MessageBox.Show(excep.Message + '\n' + "Please enter a natural number.");
+            }
         }
 
         private void Cancel_Button_ImageResizeForm_Click(object sender, EventArgs e)

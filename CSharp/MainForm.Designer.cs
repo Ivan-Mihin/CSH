@@ -30,7 +30,7 @@
         {
             this.background = new System.Windows.Forms.PictureBox();
             this.open = new System.Windows.Forms.OpenFileDialog();
-            this.bitmapSlika = new System.Windows.Forms.PictureBox();
+            this.openedImage = new System.Windows.Forms.PictureBox();
             this.colorDialog = new System.Windows.Forms.ColorDialog();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -42,11 +42,8 @@
             this.imageMovementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.backgroundColorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.instructionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.background)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bitmapSlika)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.openedImage)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -66,23 +63,22 @@
             // 
             this.open.Filter = "Image Files (*.bmp)|*.bmp|All Files|*.*";
             // 
-            // bitmapSlika
+            // openedImage
             // 
-            this.bitmapSlika.Location = new System.Drawing.Point(12, 31);
-            this.bitmapSlika.Name = "bitmapSlika";
-            this.bitmapSlika.Size = new System.Drawing.Size(150, 150);
-            this.bitmapSlika.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.bitmapSlika.TabIndex = 2;
-            this.bitmapSlika.TabStop = false;
-            this.bitmapSlika.Visible = false;
+            this.openedImage.Location = new System.Drawing.Point(12, 31);
+            this.openedImage.Name = "openedImage";
+            this.openedImage.Size = new System.Drawing.Size(150, 150);
+            this.openedImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.openedImage.TabIndex = 2;
+            this.openedImage.TabStop = false;
+            this.openedImage.Visible = false;
             // 
             // menuStrip1
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
-            this.editToolStripMenuItem,
-            this.helpToolStripMenuItem});
+            this.editToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1235, 28);
@@ -102,19 +98,19 @@
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(129, 26);
             this.openToolStripMenuItem.Text = "Open...";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(213, 6);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(126, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(129, 26);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -132,14 +128,14 @@
             // imageResizeToolStripMenuItem
             // 
             this.imageResizeToolStripMenuItem.Name = "imageResizeToolStripMenuItem";
-            this.imageResizeToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.imageResizeToolStripMenuItem.Size = new System.Drawing.Size(203, 26);
             this.imageResizeToolStripMenuItem.Text = "Image Resize";
             this.imageResizeToolStripMenuItem.Click += new System.EventHandler(this.imageResizeToolStripMenuItem_Click);
             // 
             // imageMovementToolStripMenuItem
             // 
             this.imageMovementToolStripMenuItem.Name = "imageMovementToolStripMenuItem";
-            this.imageMovementToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.imageMovementToolStripMenuItem.Size = new System.Drawing.Size(203, 26);
             this.imageMovementToolStripMenuItem.Text = "Image Movement";
             this.imageMovementToolStripMenuItem.Click += new System.EventHandler(this.imageMovementToolStripMenuItem_Click);
             // 
@@ -151,43 +147,22 @@
             // backgroundColorToolStripMenuItem
             // 
             this.backgroundColorToolStripMenuItem.Name = "backgroundColorToolStripMenuItem";
-            this.backgroundColorToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.backgroundColorToolStripMenuItem.Size = new System.Drawing.Size(203, 26);
             this.backgroundColorToolStripMenuItem.Text = "Background Color";
             this.backgroundColorToolStripMenuItem.Click += new System.EventHandler(this.backgroundColorToolStripMenuItem_Click);
-            // 
-            // helpToolStripMenuItem
-            // 
-            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.instructionsToolStripMenuItem,
-            this.aboutToolStripMenuItem});
-            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(53, 24);
-            this.helpToolStripMenuItem.Text = "Help";
-            // 
-            // instructionsToolStripMenuItem
-            // 
-            this.instructionsToolStripMenuItem.Name = "instructionsToolStripMenuItem";
-            this.instructionsToolStripMenuItem.Size = new System.Drawing.Size(159, 26);
-            this.instructionsToolStripMenuItem.Text = "Instructions";
-            // 
-            // aboutToolStripMenuItem
-            // 
-            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(159, 26);
-            this.aboutToolStripMenuItem.Text = "About";
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1235, 659);
-            this.Controls.Add(this.bitmapSlika);
+            this.Controls.Add(this.openedImage);
             this.Controls.Add(this.background);
             this.Controls.Add(this.menuStrip1);
             this.Name = "MainForm";
             this.Text = "Main";
             ((System.ComponentModel.ISupportInitialize)(this.background)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bitmapSlika)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.openedImage)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -199,7 +174,7 @@
 
         private System.Windows.Forms.PictureBox background;
         private System.Windows.Forms.OpenFileDialog open;
-        private System.Windows.Forms.PictureBox bitmapSlika;
+        private System.Windows.Forms.PictureBox openedImage;
         private System.Windows.Forms.ColorDialog colorDialog;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
@@ -211,9 +186,6 @@
         private System.Windows.Forms.ToolStripMenuItem imageMovementToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem backgroundColorToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem instructionsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
     }
 }
 

@@ -91,43 +91,43 @@ namespace CSharp
         {
             if (key_UpArrow || key_W)
             {
-                if (bitmapSlika.Location.Y - Movement > 0)
+                if (openedImage.Location.Y - Movement > 0)
                 {
-                    bitmapSlika.Location = new Point(bitmapSlika.Location.X, bitmapSlika.Location.Y - Movement);
+                    openedImage.Location = new Point(openedImage.Location.X, openedImage.Location.Y - Movement);
                 }
             }
 
             if (key_LeftArrow || key_A)
             {
-                if (bitmapSlika.Location.X - Movement > 0)
+                if (openedImage.Location.X - Movement > 0)
                 {
-                    bitmapSlika.Location = new Point(bitmapSlika.Location.X - Movement, bitmapSlika.Location.Y);
+                    openedImage.Location = new Point(openedImage.Location.X - Movement, openedImage.Location.Y);
                 }
             }
 
             if (key_DownArrow || key_S)
             {
-                if (bitmapSlika.Location.Y + Movement < background.Height - bitmapSlika.Height)
+                if (openedImage.Location.Y + Movement < background.Height - openedImage.Height)
                 {
-                    bitmapSlika.Location = new Point(bitmapSlika.Location.X, bitmapSlika.Location.Y + Movement);
+                    openedImage.Location = new Point(openedImage.Location.X, openedImage.Location.Y + Movement);
                 }
             }
 
             if (key_RightArrow || key_D)
             {
-                if (bitmapSlika.Location.X + Movement < background.Width - bitmapSlika.Width)
+                if (openedImage.Location.X + Movement < background.Width - openedImage.Width)
                 {
-                    bitmapSlika.Location = new Point(bitmapSlika.Location.X + Movement, bitmapSlika.Location.Y);
+                    openedImage.Location = new Point(openedImage.Location.X + Movement, openedImage.Location.Y);
                 }
             }
         }
 
         private void imageResizeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ImageResizeForm resizeForm = new ImageResizeForm(bitmapSlika.Image, bitmapSlika.Width, bitmapSlika.Height);
+            ImageResizeForm resizeForm = new ImageResizeForm(openedImage.Image, openedImage.Width, openedImage.Height);
             resizeForm.ShowDialog();
 
-            bitmapSlika.Image = resizeForm.NewBitmap;
+            openedImage.Image = resizeForm.NewBitmap;
         }
 
         private void imageMovementToolStripMenuItem_Click(object sender, EventArgs e)
@@ -150,10 +150,10 @@ namespace CSharp
         {
             if (open.ShowDialog() == DialogResult.OK)
             {
-                bitmapSlika.Image = new Bitmap(open.FileName);
+                openedImage.Image = new Bitmap(open.FileName);
 
-                background.Controls.Add(bitmapSlika);
-                bitmapSlika.Visible = true;
+                background.Controls.Add(openedImage);
+                openedImage.Visible = true;
             }
         }
 

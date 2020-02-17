@@ -77,7 +77,7 @@
             // TextBoxInputCheck_imf
             // 
             this.TextBoxInputCheck_imf.Enabled = true;
-            this.TextBoxInputCheck_imf.Interval = 10;
+            this.TextBoxInputCheck_imf.Interval = 50;
             this.TextBoxInputCheck_imf.Tick += new System.EventHandler(this.TextBoxInputCheck_imf_Tick);
             // 
             // ImageMovementForm
